@@ -33,7 +33,7 @@ pipeline {
             sh 'cat demo-java-app/Dockerfile' // Check Dockerfile contents
             sh 'cd demo-java-app && docker build -t demo-java-app:latest .' // build image 
             sh 'docker images'  // List available Docker images
-            sh 'docker tag demo-java-app mounika719/demo-java-app:latest'
+           // sh 'docker tag demo-java-app mounika719/demo-java-app:latest'
             sh 'docker push mounika719/demo-java-app:latest' // push image into dockerhub
         }
     }
