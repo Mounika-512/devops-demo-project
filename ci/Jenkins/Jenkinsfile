@@ -26,6 +26,14 @@ pipeline {
         }
       }
     }
+    stage('Debug Target Directory') {
+    steps {
+        script {
+            sh 'ls -l target'
+            sh 'ls -l target/demo-java-app.jar'
+        }
+    }
+}
     stage('Build and Push Docker Image') {
     steps {
         script {
