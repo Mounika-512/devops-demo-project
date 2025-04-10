@@ -27,6 +27,14 @@ pipeline {
       }
     }
     stage('Build and Push Docker Image') {
+    steps {
+        script {
+            sh 'ls -l demo-java-app'  // Check directory structure
+            sh 'cat demo-java-app/Dockerfile'  // Check Dockerfile contents
+        }
+    }
+  }
+    stage('Build and Push Docker Image') {
       environment {
         DOCKER_IMAGE = "mounika719/demo-java-app:${build_version}"
         REGISTRY_CREDENTIALS = credentials('dockerhub')
