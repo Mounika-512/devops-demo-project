@@ -26,21 +26,13 @@ pipeline {
         }
       }
     }
-    stage('Debug Target Directory') {
-    steps {
-        script {
-            sh 'ls -l target'
-            sh 'ls -l target/demo-java-app.jar'
-        }
-    }
-}
-    stage('Build and Push Docker Image') {
-    steps {
+   stage('Build and Push Docker Image') {
+     steps {
         script {
             sh 'ls -l demo-java-app'  // Check directory structure
             sh 'cat demo-java-app/Dockerfile' // Check Dockerfile contents
-            sh 'ls -l '  // List contents of the target directory
-            sh 'cat target/demo-java-app.jar'  // Verify the specific file exists
+            sh 'docker build -t demo-java-app .' // build image 
+            sh 'docker push mounika719/demo-java-app' // push image into dockerhub
         }
     }
 }
