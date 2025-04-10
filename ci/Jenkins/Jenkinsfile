@@ -31,8 +31,8 @@ pipeline {
         script {
             sh 'ls -l demo-java-app'  // Check directory structure
             sh 'cat demo-java-app/Dockerfile' // Check Dockerfile contents
-            sh 'ls -l target'  // List contents of the target directory
-            sh 'ls -l target/demo-java-app.jar'  // Verify the specific file exists
+            sh 'ls -l '  // List contents of the target directory
+            sh 'cat target/demo-java-app.jar'  // Verify the specific file exists
         }
     }
 }
