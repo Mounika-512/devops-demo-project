@@ -35,6 +35,7 @@ pipeline {
             sh 'ls -l demo-java-app'  // Check directory structure
             sh 'cat demo-java-app/Dockerfile'  // Check Dockerfile contents
             sh 'cd demo-java-app && docker build -t ${DOCKER_IMAGE} .'
+          }
             
         }
     }
@@ -73,5 +74,4 @@ pipeline {
         }
     }
   }
-}
 }
